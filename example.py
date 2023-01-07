@@ -43,7 +43,6 @@ if __name__ == "__main__":
         "unsharp_masking": unsharp_masking,
     }
     details = ["median", *filters, "bilateral"]
-    """
     # applying convolution filters with different kernels
     for name, kernel in filters.items():
         filtered_img = convolution_filter(image=img, kernel=kernel)
@@ -58,7 +57,7 @@ if __name__ == "__main__":
     cv2_img = cv2.imread("original.jpg")
     bilateral = cv2.bilateralFilter(cv2_img, 5, 2, 10)
     cv2.imwrite("filtered/bilateral.jpg", bilateral)
-    """
+
     # print mean squared error and save difference images
     for name in details:
         print(f"{name}:")
